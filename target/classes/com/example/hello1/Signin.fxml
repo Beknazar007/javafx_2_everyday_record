@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="700.0" style="-fx-background-color: #0056BA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello1.SigninController">
+   <children>
+      <AnchorPane layoutY="120.0" prefHeight="449.0" prefWidth="700.0" style="-fx-background-color: #fff;">
+         <children>
+            <TextField fx:id="NumOfTable" layoutX="169.0" layoutY="127.0" prefHeight="26.0" prefWidth="363.0" promptText="Number of Table" style="-fx-background-color: #fff; -fx-border-color: silver; -fx-border-radius: 5px;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="NameOfClient" layoutX="169.0" layoutY="185.0" prefHeight="26.0" prefWidth="363.0" promptText="Password of Table" style="-fx-background-color: #fff; -fx-border-color: silver; -fx-border-radius: 5px;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </PasswordField>
+            <Label layoutX="266.0" layoutY="42.0" style="-fx-color: f39C63;" text="Autorization" textFill="#EB6100">
+               <font>
+                  <Font name="Garuda Bold" size="31.0" />
+               </font>
+            </Label>
+            <Button fx:id="SigninButton" layoutX="169.0" layoutY="276.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: #0056BA;" text="Sign in" textFill="WHITE"  >
+               <font>
+                  <Font name="Garuda Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Button fx:id="SignUpButton" layoutX="556.0" layoutY="32.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: #EB6100;" text="Sign up" textFill="WHITE">
+         <font>
+            <Font name="Garuda Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="238.0" layoutY="14.0" text="Recording" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
