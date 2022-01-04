@@ -1,26 +1,26 @@
 package com.example.hello1;
 
-public class Tasks {
+public class User_time {
     private String recId;
     private String rec;
     private String recDate;
 
-    public Tasks() {
+    public User_time() {
         this.recId = recId;
         this.rec = rec;
         this.recDate = recDate;
     }
-    public Tasks(String s, String text, String leavingText, String hoursstText, String format){}
+    public User_time(String s, String comming, String leaving, String hoursst, String format){}
 
-    public void setTaskId(String recId) {
+    public void setRecId(String recId) {
         this.recId = recId;
     }
 
-    public void setTask(String rec) {
+    public void setRec(String rec) {
         this.rec = rec;
     }
 
-    public void setTaskDate(String recDate) {
+    public void setRecDate(String recDate) {
         this.recDate = recDate;
     }
 

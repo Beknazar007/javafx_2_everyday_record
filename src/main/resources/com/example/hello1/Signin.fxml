@@ -11,12 +11,12 @@
    <children>
       <AnchorPane layoutY="120.0" prefHeight="449.0" prefWidth="700.0" style="-fx-background-color: #fff;">
          <children>
-            <TextField fx:id="NumOfTable" layoutX="169.0" layoutY="127.0" prefHeight="26.0" prefWidth="363.0" promptText="Number of Table" style="-fx-background-color: #fff; -fx-border-color: silver; -fx-border-radius: 5px;">
+            <TextField fx:id="login" layoutX="169.0" layoutY="127.0" prefHeight="26.0" prefWidth="363.0" promptText="login" style="-fx-background-color: #fff; -fx-border-color: silver; -fx-border-radius: 5px;">
                <font>
                   <Font size="17.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="NameOfClient" layoutX="169.0" layoutY="185.0" prefHeight="26.0" prefWidth="363.0" promptText="Password of Table" style="-fx-background-color: #fff; -fx-border-color: silver; -fx-border-radius: 5px;">
+            <PasswordField fx:id="password" layoutX="169.0" layoutY="185.0" prefHeight="26.0" prefWidth="363.0" promptText="password" style="-fx-background-color: #fff; -fx-border-color: silver; -fx-border-radius: 5px;">
                <font>
                   <Font size="17.0" />
                </font>
@@ -26,7 +26,7 @@
                   <Font name="Garuda Bold" size="31.0" />
                </font>
             </Label>
-            <Button fx:id="SigninButton" layoutX="169.0" layoutY="276.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: #0056BA;" text="Sign in" textFill="WHITE"  >
+            <Button fx:id="SigninButton" layoutX="169.0" layoutY="276.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: #0056BA;" text="Sign in" textFill="WHITE">
                <font>
                   <Font name="Garuda Bold" size="13.0" />
                </font>

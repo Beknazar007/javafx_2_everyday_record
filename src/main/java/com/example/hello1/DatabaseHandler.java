@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class DatabaseHandler extends Configs {
+public class DatabaseHandler extends DatabaseModule {
     final static String connectionString = "jdbc:postgresql://"+dbHost+":"+dbPort+"/"+dbName ;
     static Connection dbConnection = null;
     final static String SELECT_QUERY =
@@ -57,20 +57,20 @@ public class DatabaseHandler extends Configs {
         }
         return resSet;
     }
-    public static List<Tasks> init() {
+    public static List<User_time> init() {
         Statement statement = null;
-        List<Tasks> tasks = new ArrayList<>();
+        List<User_time> tasks = new ArrayList<>();
         try {
             if (dbConnection == null) {
-                dbConnection = DriverManager.getConnection(connectionString, Configs.dbUser, Configs.dbPass);
+                dbConnection = DriverManager.getConnection(connectionString, DatabaseModule.dbUser, DatabaseModule.dbPass);
             }
             statement = dbConnection.createStatement();
             ResultSet res = statement.executeQuery(SELECT_QUERY);
             while (res.next()) {
-                Tasks task = new Tasks();
-                task.setTaskId(Integer.toString(res.getInt("taskId")));
-                task.setTask(res.getString("task"));
-                task.setTaskDate(res.getString("taskDate"));
+                User_time task = new User_time();
+                task.setRecId(Integer.toString(res.getInt("recId")));
+                task.setRec(res.getString("rec"));
+                task.setRecDate(res.getString("recDate"));
                 tasks.add(task);
             }
         } catch (SQLException throwables) {
@@ -78,7 +78,7 @@ public class DatabaseHandler extends Configs {
         }
         return tasks;
     }
-    public static void addTask(Tasks task) {
+    public static void addTask(User_time task) {
         try {
             Statement statement = dbConnection.createStatement();
             statement.executeUpdate("INSERT INTO "+ Const.TASK_TABLE + "(" + Const.TASK_NAME + "," +

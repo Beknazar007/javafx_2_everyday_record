@@ -44,9 +44,9 @@ public class SignUpController {
                 openAuthPage("Signin.fxml");
             }else{
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Замечание");
+                alert.setTitle("Error");
                 alert.setHeaderText(null);
-                alert.setContentText("Логин и пароль пустые");
+                alert.setContentText("Something went wrong");
                 alert.showAndWait();
                 System.out.println("Login and password is empty");
             }

@@ -1,6 +1,6 @@
 package com.example.hello1;
 
-public class Configs {
+public class DatabaseModule {
     protected static String dbHost = "localhost";
     protected static String dbPort = "5432";
     protected static String dbUser = "postgres";
