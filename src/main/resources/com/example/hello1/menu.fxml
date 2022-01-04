@@ -18,9 +18,9 @@
                             <Font size="20.0" />
                         </font>
                     </Button>
-                        <TextField fx:id="come" prefHeight="48.0" prefWidth="177.0" promptText="comming time" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
-                        <TextField fx:id="leave" layoutX="176.0" prefHeight="48.0" prefWidth="177.0" promptText="leaving time " style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
-                        <TextField fx:id="hoursst" layoutX="348.0" prefHeight="48.0" prefWidth="166.0" promptText="hours studying" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;"  />
+                    <TextField fx:id="textToDo" prefHeight="48.0" prefWidth="177.0" promptText="comming time" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
+            <TextField fx:id="textToDo1" layoutX="176.0" prefHeight="48.0" prefWidth="177.0" promptText="coming time " style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
+            <TextField fx:id="textToDo11" layoutX="348.0" prefHeight="48.0" prefWidth="166.0" promptText="hours studying" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
                 </children>
             </AnchorPane>
             <TableView fx:id="tableView" layoutX="84.0" layoutY="121.0" onMouseClicked="#clickItem" prefHeight="323.0" prefWidth="568.0" tableMenuButtonVisible="true">
@@ -30,7 +30,7 @@
             <TableColumn fx:id="task1" prefWidth="201.0" text="hours studying" />
                 </columns>
             </TableView>
-            <Button fx:id="btnRemove" layoutX="609.0" layoutY="453.0" mnemonicParsing="false" onAction="#removeTask" text="Remove" />
-            <DatePicker fx:id="date" layoutX="84.0" layoutY="80.0" prefHeight="28.0" prefWidth="166.0" promptText="Date..." />
+            <Button fx:id="btnRemove" layoutX="609.0" layoutY="453.0" mnemonicParsing="false" onAction="#removeTask" text="Удалить" />
+            <DatePicker fx:id="date" layoutX="84.0" layoutY="80.0" prefHeight="28.0" prefWidth="166.0" promptText="Введите число..." />
         </children>
 </AnchorPane>

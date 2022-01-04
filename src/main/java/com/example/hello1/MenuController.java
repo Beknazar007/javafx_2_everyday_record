@@ -14,15 +14,19 @@ public class MenuController implements Initializable{
     @FXML public Button btnAdd;
 
 
-    @FXML public TextField textToDo;
+    @FXML public TextField comming;
+
+    @FXML public TextField leaving;
+
+    @FXML public TextField hoursst;
 
     @FXML public TableView<Tasks> tableView;
 
-    @FXML public TableColumn<Tasks, String> taskId;
+    @FXML public TableColumn<Tasks, String> recId;
 
-    @FXML public TableColumn<Tasks, String >task;
+    @FXML public TableColumn<Tasks, String >rec;
 
-    @FXML public TableColumn<Tasks, String> taskDate;
+    @FXML public TableColumn<Tasks, String> recDate;
 
     @FXML public Button btnRemove;
 
@@ -32,14 +36,14 @@ public class MenuController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        taskId.setCellValueFactory(new PropertyValueFactory<Tasks, String>("taskId"));
-        task.setCellValueFactory(new PropertyValueFactory<Tasks, String>("task"));
-        taskDate.setCellValueFactory(new PropertyValueFactory<Tasks, String>("taskDate"));
+        recId.setCellValueFactory(new PropertyValueFactory<Tasks, String>("recId"));
+        rec.setCellValueFactory(new PropertyValueFactory<Tasks, String>("rec"));
+        recDate.setCellValueFactory(new PropertyValueFactory<Tasks, String>("recDate"));
         tableView.getItems().setAll(DatabaseHandler.init());
     }
 
     public void addNewTask(ActionEvent actionEvent) {
-        DatabaseHandler.addTask(new Tasks(Integer.toString(0), textToDo.getText(), date.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))));
+        DatabaseHandler.addTask(new Tasks(Integer.toString(0), comming.getText() ,leaving.getText(), hoursst.getText(), date.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))));
         tableView.getItems().setAll(DatabaseHandler.init());
     }
 

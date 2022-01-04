@@ -4,7 +4,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,12 +20,10 @@ public class SignUpController {
     private TextField user_LastName;
     @FXML
     private TextField user_login;
-    @FXML
-    private PasswordField user_card;
+
     @FXML
     private PasswordField user_password;
-    @FXML
-    private RadioButton user_gender;
+
     @FXML
     private Button signUpButton;
     @FXML
@@ -38,8 +39,9 @@ public class SignUpController {
             String loginText = user_login.getText().trim();
             String loginPassword = user_password.getText().trim();
             if (!loginText.equals("")&& !loginPassword.equals("")){
+
                 signUpNewUser();
-                openAuthPage("menu.fxml");
+                openAuthPage("Signin.fxml");
             }else{
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Замечание");
@@ -51,21 +53,21 @@ public class SignUpController {
         });
     }
 
+
+
+
+
+    @FXML
     private void signUpNewUser() {
+
         DatabaseHandler dbHandler = new DatabaseHandler();
 
-        String firstName = user_name.getText();
         String lastName = user_LastName.getText();
+        String firstName = user_name.getText();
         String userName = user_login.getText();
         String password = user_password.getText();
-        String card     = user_card.getText();
-        String gender;
-        if (user_gender.isSelected())
-            gender = "Мужской";
-        else
-            gender = "Женский";
 
-        User user = new User(firstName,lastName,userName,password,gender,card);
+        User user = new User(firstName,lastName,userName,password);
 
         dbHandler.addNewUser(user);
     }
@@ -87,4 +89,6 @@ public class SignUpController {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
+
 }

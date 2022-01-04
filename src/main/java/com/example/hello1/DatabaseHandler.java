@@ -3,37 +3,41 @@ package com.example.hello1;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DatabaseHandler extends Configs {
-    final static String connectionString = "jdbc:postgresql://" + dbPort + "; databaseName = " + dbName ;
+    final static String connectionString = "jdbc:postgresql://"+dbHost+":"+dbPort+"/"+dbName ;
     static Connection dbConnection = null;
     final static String SELECT_QUERY =
-            "SELECT taskId, task, taskDate FROM tasks";
+            "SELECT * FROM students";
+
+
 
     public Connection getDbConnection() throws ClassNotFoundException, SQLException {
         dbConnection = DriverManager.getConnection(connectionString, dbUser, dbPass);
         return dbConnection;
     }
-    public void addNewUser(User user){
-        String insert = "INSERT INTO " + Const.USER_TABLE + "(" + Const.USERS_FIRSTNAME + "," +Const.USERS_LASTNAME
-                + "," + Const.USERS_LOGIN + "," + Const.USERS_PASS + "," + Const.USERS_GENDER + ")"
-                + "VALUES(?,?,?,?,?)";
-        try {
-            PreparedStatement prSt = getDbConnection().prepareStatement(insert);
-            prSt.setString(1, user.getFirstName());
-            prSt.setString(2, user.getLastName());
-            prSt.setString(3, user.getUserName());
-            prSt.setString(4, user.getPassword());
-            
-            prSt.setString(6, user.getGender());
+    public  void addNewUser(User user){
 
-            prSt.executeUpdate();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        String query = "INSERT INTO students(last_name ,name , login , password) VALUES(?,?,?,?)";
+
+        try (
+            PreparedStatement pst = getDbConnection().prepareStatement(query)) {
+
+            pst.setString(1, user.getLastName());
+            pst.setString(2, user.getFirstName());
+            pst.setString(3, user.getUserName());
+            pst.setString(4, user.getPassword());
+            pst.executeUpdate();
+            System.out.println("Successfully created");
+
+        }catch (SQLException | ClassNotFoundException e){
+            Logger lgr = Logger.getLogger(DatabaseHandler.class.getName());
+            lgr.log(Level.SEVERE, e.getMessage(),e);
         }
     }
+
     public ResultSet getUser(User user){
         ResultSet resSet = null;
 
@@ -41,11 +45,11 @@ public class DatabaseHandler extends Configs {
                 + Const.USERS_LOGIN + " = ? AND " + Const.USERS_PASS + " = ?";
 
         try {
-            PreparedStatement prSt = getDbConnection().prepareStatement(select);
-            prSt.setString(1, user.getUserName());
-            prSt.setString(2, user.getPassword());
+            PreparedStatement pst = getDbConnection().prepareStatement(select);
+            pst.setString(1, user.getUserName());
+            pst.setString(2, user.getPassword());
 
-            resSet = prSt.executeQuery();
+            resSet = pst.executeQuery();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } catch (ClassNotFoundException e) {

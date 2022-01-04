@@ -1,39 +1,39 @@
 package com.example.hello1;
 
 public class Tasks {
-    private String taskId;
-    private String task;
-    private String taskDate;
+    private String recId;
+    private String rec;
+    private String recDate;
 
-    public Tasks(String taskId, String task, String taskDate) {
-        this.taskId = taskId;
-        this.task = task;
-        this.taskDate = taskDate;
+    public Tasks() {
+        this.recId = recId;
+        this.rec = rec;
+        this.recDate = recDate;
     }
-    public Tasks(){}
+    public Tasks(String s, String text, String leavingText, String hoursstText, String format){}
 
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
-
-    public void setTask(String task) {
-        this.task = task;
+    public void setTaskId(String recId) {
+        this.recId = recId;
     }
 
-    public void setTaskDate(String taskDate) {
-        this.taskDate = taskDate;
+    public void setTask(String rec) {
+        this.rec = rec;
+    }
+
+    public void setTaskDate(String recDate) {
+        this.recDate = recDate;
     }
 
     public String getTaskId() {
-        return taskId;
+        return recId;
     }
 
     public String getTask() {
-        return task;
+        return rec;
     }
 
     public String getTaskDate() {
-        return taskDate;
+        return recDate;
     }
 
 }
