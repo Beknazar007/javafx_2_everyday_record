@@ -1,39 +1,61 @@
 package com.example.hello1;
 
 public class User_time {
-    private String recId;
-    private String rec;
+    private String userId;
+    private String coming;
+    private String leaving;
+    private String studying;
     private String recDate;
 
+    public User_time(String userId,String coming, String leaving, String hoursst, String recDate){
+        this.userId     = userId;
+        this.coming     = coming;
+        this.leaving    = leaving;
+        this.studying   = hoursst;
+        this.recDate    = recDate;
+    }
     public User_time() {
-        this.recId = recId;
-        this.rec = rec;
-        this.recDate = recDate;
-    }
-    public User_time(String s, String comming, String leaving, String hoursst, String format){}
-
-    public void setRecId(String recId) {
-        this.recId = recId;
     }
 
-    public void setRec(String rec) {
-        this.rec = rec;
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public void setComing(String coming) {
+        this.coming = coming;
+    }
+
+    public void setLeaving(String leaving) {
+        this.leaving = leaving;
+    }
+
+    public void setStudying(String studying) {
+        this.studying = studying;
     }
 
     public void setRecDate(String recDate) {
         this.recDate = recDate;
     }
 
-    public String getTaskId() {
-        return recId;
+    public String getUserId() {
+        return userId;
     }
 
-    public String getTask() {
-        return rec;
+    public String getComing() {
+        return coming;
     }
 
-    public String getTaskDate() {
+    public String getLeaving() {
+        return leaving;
+    }
+
+    public String getStudying() {
+        return studying;
+    }
+
+    public String getRecDate() {
         return recDate;
     }
+
 
 }

@@ -9,8 +9,7 @@ import java.util.logging.Logger;
 public class DatabaseHandler extends DatabaseModule {
     final static String connectionString = "jdbc:postgresql://"+dbHost+":"+dbPort+"/"+dbName ;
     static Connection dbConnection = null;
-    final static String SELECT_QUERY =
-            "SELECT * FROM students";
+    final static String SELECT_QUERY = "SELECT * FROM users_time ;";
 
 
 
@@ -41,8 +40,8 @@ public class DatabaseHandler extends DatabaseModule {
     public ResultSet getUser(User user){
         ResultSet resSet = null;
 
-        String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE "
-                + Const.USERS_LOGIN + " = ? AND " + Const.USERS_PASS + " = ?";
+        String select = "SELECT * FROM " + Table_Info_Module.USER_TABLE + " WHERE "
+                + Table_Info_Module.USERS_LOGIN + " = ? AND " + Table_Info_Module.USERS_PASS + " = ?";
 
         try {
             PreparedStatement pst = getDbConnection().prepareStatement(select);
@@ -59,7 +58,7 @@ public class DatabaseHandler extends DatabaseModule {
     }
     public static List<User_time> init() {
         Statement statement = null;
-        List<User_time> tasks = new ArrayList<>();
+        List<User_time> user_times = new ArrayList<>();
         try {
             if (dbConnection == null) {
                 dbConnection = DriverManager.getConnection(connectionString, DatabaseModule.dbUser, DatabaseModule.dbPass);
@@ -67,22 +66,24 @@ public class DatabaseHandler extends DatabaseModule {
             statement = dbConnection.createStatement();
             ResultSet res = statement.executeQuery(SELECT_QUERY);
             while (res.next()) {
-                User_time task = new User_time();
-                task.setRecId(Integer.toString(res.getInt("recId")));
-                task.setRec(res.getString("rec"));
-                task.setRecDate(res.getString("recDate"));
-                tasks.add(task);
+                User_time user_time = new User_time();
+                user_time.setUserId(Integer.toString(res.getInt("userId")));
+                user_time.setComing(res.getString("comming"));
+                user_time.setLeaving(res.getString("leaving"));
+                user_time.setStudying(res.getString("studying"));
+                user_time.setRecDate(res.getString("recDate"));
+                user_times.add(user_time);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return tasks;
+        return user_times;
     }
-    public static void addTask(User_time task) {
+    public static void addNewTime(User_time userTime) {
         try {
             Statement statement = dbConnection.createStatement();
-            statement.executeUpdate("INSERT INTO "+ Const.TASK_TABLE + "(" + Const.TASK_NAME + "," +
-                    Const.TASK_DATE +") " + "VALUES ('" + task.getTask() +"','" + task.getTaskDate() + "')");
+            statement.executeUpdate("INSERT INTO "+ Table_Info_Module.TASK_TABLE + "(" + Table_Info_Module.TASK_COMM + "," +
+                    Table_Info_Module.TASK_LEAV +","+ Table_Info_Module.TASK_STUD+","+ Table_Info_Module.TASK_DATE+") " + "VALUES ('"  + userTime.getComing() +"','" + userTime.getLeaving() +"','" + userTime.getStudying() +"','" + userTime.getRecDate() + "')");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -90,7 +91,7 @@ public class DatabaseHandler extends DatabaseModule {
     public static void deleteTask(int id){
         try {
             Statement statement = dbConnection.createStatement();
-            statement.executeUpdate("DELETE FROM " + Const.TASK_TABLE + " WHERE " + Const.TASK_ID + "=" + Integer.toString(id));
+            statement.executeUpdate("DELETE FROM " + Table_Info_Module.TASK_TABLE + " WHERE " + Table_Info_Module.TASK_ID + "=" + Integer.toString(id));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

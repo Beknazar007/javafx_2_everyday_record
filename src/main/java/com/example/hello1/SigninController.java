@@ -35,7 +35,7 @@ public class SigninController {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
-                alert.setContentText("Login or password interred wrong");
+                alert.setContentText("Something went wrong");
                 alert.showAndWait();
                 System.out.println("Login and password is empty");
             }
@@ -67,7 +67,7 @@ public class SigninController {
         }
 
         if (count >= 1){
-            openNewScene("menu.fxml");
+            openNewScene("user_time.fxml");
         }else {
             Shake userLoginAnim = new Shake(login);
             Shake userPassAnim = new Shake(password);
