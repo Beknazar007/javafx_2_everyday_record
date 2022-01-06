@@ -8,36 +8,48 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="619.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello1.User_table_Controller">
+<AnchorPane prefHeight="619.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.hello1.User_table_Controller">
 
-        <children>
-            <AnchorPane layoutX="51.0" layoutY="43.0" prefHeight="34.0" prefWidth="790.0" style="-fx-background-color: #2E3348;">
-                <children>
-                    <Button fx:id="btnAdd" layoutX="735.0" mnemonicParsing="false" onAction="#addUsersTime" prefHeight="48.0" prefWidth="55.0" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" text="+">
-                        <font>
-                            <Font size="20.0" />
-                        </font>
-                    </Button>
-                        <TextField fx:id="coming" layoutX="-1.0" prefHeight="48.0" prefWidth="248.0" promptText="comming time" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
-                        <TextField fx:id="leaving" layoutX="245.0" prefHeight="48.0" prefWidth="248.0" promptText="coming time " style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
-                        <TextField fx:id="studying" layoutX="493.0" prefHeight="48.0" prefWidth="242.0" promptText="hours studying" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
-                </children>
-            </AnchorPane>
-            <TableView fx:id="tableView" layoutX="51.0" layoutY="158.0" onMouseClicked="#clickItem" prefHeight="343.0" prefWidth="790.0" tableMenuButtonVisible="true">
-                <columns>
-                    <TableColumn fx:id="userId" minWidth="0.0" prefWidth="35.0" text="№" />
-                    <TableColumn fx:id="coming_v" prefWidth="184.0" text="comming time" />
-                    <TableColumn fx:id="leaving_v" minWidth="0.0" prefWidth="168.0" text="leaving time " />
-                    <TableColumn fx:id="studying_v" prefWidth="201.0" text="hours studying" />
-                    <TableColumn fx:id="recDate" prefWidth="184.0" text="date" />
-                </columns>
-            </TableView>
-            <Button fx:id="btnRemove" layoutX="753.0" layoutY="521.0" mnemonicParsing="false" onAction="#removeTimeRec" prefHeight="35.0" prefWidth="88.0" style="-fx-background-color: #0056BA;" text="Remove" textFill="WHITE" />
-            <DatePicker fx:id="date" layoutX="675.0" layoutY="113.0" prefHeight="28.0" prefWidth="166.0" promptText="Enter date..." />
-            <Button fx:id="SignInButton" layoutX="51.0" layoutY="521.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: #0056BA;" text="Sign In" textFill="WHITE">
-         <font>
-            <Font name="Garuda Bold" size="13.0" />
-         </font>
-      </Button>
-        </children>
+    <AnchorPane layoutX="51.0" layoutY="43.0" prefHeight="34.0" prefWidth="790.0"
+                style="-fx-background-color: #2E3348;">
+        <Button fx:id="btnAdd" layoutX="735.0" mnemonicParsing="false" onAction="#addUsersTime"
+                prefHeight="48.0" prefWidth="55.0"
+                style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" text="+">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Button>
+        <TextField fx:id="coming" layoutX="-1.0" prefHeight="48.0" prefWidth="248.0" promptText="comming time"
+                   style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;"/>
+        <TextField fx:id="leaving" layoutX="245.0" prefHeight="48.0" prefWidth="248.0" promptText="coming time "
+                   style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;"/>
+        <TextField fx:id="studying" layoutX="493.0" prefHeight="48.0" prefWidth="242.0"
+                   promptText="hours studying"
+                   style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;"/>
+    </AnchorPane>
+    <TableView fx:id="tableView" layoutX="51.0" layoutY="158.0" onMouseClicked="#clickItem" prefHeight="343.0"
+               prefWidth="790.0" tableMenuButtonVisible="true">
+        <columns>
+            <TableColumn fx:id="userId" minWidth="0.0" prefWidth="35.0" text="№"/>
+            <TableColumn fx:id="coming_v" prefWidth="184.0" text="comming time"/>
+            <TableColumn fx:id="leaving_v" minWidth="0.0" prefWidth="168.0" text="leaving time "/>
+            <TableColumn fx:id="studying_v" prefWidth="201.0" text="hours studying"/>
+            <TableColumn fx:id="recDate" prefWidth="184.0" text="date"/>
+        </columns>
+    </TableView>
+    <DatePicker fx:id="date" layoutX="675.0" layoutY="113.0" prefHeight="28.0" prefWidth="166.0"
+                promptText="Enter date..."/>
+    <Button fx:id="SignInButton" layoutX="51.0" layoutY="521.0" mnemonicParsing="false" prefHeight="35.0"
+            prefWidth="115.0" style="-fx-background-color: #0056BA;" text="Sign In" textFill="WHITE">
+        <font>
+            <Font name="Garuda Bold" size="13.0"/>
+        </font>
+    </Button>
+    <Button fx:id="btnRemove" layoutX="726.0" layoutY="521.0" mnemonicParsing="false" onAction="#removeTimeRec"
+            prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: #0056BA;" text="Remove" textFill="WHITE">
+        <font>
+            <Font name="Garuda Bold" size="13.0"/>
+        </font>
+    </Button>
 </AnchorPane>

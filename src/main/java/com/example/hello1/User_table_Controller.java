@@ -66,14 +66,14 @@ public class User_table_Controller implements Initializable{
     @FXML
     void initialize() {
         SignInButton.setOnAction(actionEvent -> {
-            openAuthPage();
+            openAuthPage("Signin.fxml");
         });
     }
-    private void openAuthPage(){
+    private void openAuthPage(String window){
         SignInButton.getScene().getWindow().hide();
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("Signin.fxml"));
+        loader.setLocation(getClass().getResource(window));
 
         try {
             loader.load();

@@ -9,7 +9,8 @@ import java.util.logging.Logger;
 public class DatabaseHandler extends DatabaseModule {
     final static String connectionString = "jdbc:postgresql://"+dbHost+":"+dbPort+"/"+dbName ;
     static Connection dbConnection = null;
-    final static String SELECT_QUERY = "SELECT * FROM users_time ;";
+    final static String SELECT_QUERY =
+            "SELECT userId , coming, leaving, studying, recDate FROM users_time ";
 
 
 
