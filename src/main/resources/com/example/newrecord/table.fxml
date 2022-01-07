@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newrecord.Table_View_Controller">
+   <children>
+      <TableView fx:id="table" prefHeight="500.0" prefWidth="700.0" style="-fx-border-image-insets: #000;">
+        <columns>
+
+            <TableColumn fx:id="name_id" prefWidth="163.0" text="Name" />
+            <TableColumn fx:id="surname_id" prefWidth="187.0" text="Surname" />
+            <TableColumn fx:id="wishes_id" prefWidth="202.0" text="Wishes" />
+            <TableColumn fx:id="date_id" prefWidth="147.0" text="Date" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
