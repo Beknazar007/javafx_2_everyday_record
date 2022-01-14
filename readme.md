@@ -12,3 +12,7 @@ Write the wishes for the future Guys which will study in this university
 ![asdf](https://i.imgur.com/K5jawOG.png)
 ![asdf](https://i.imgur.com/6KyPt39.png)
 ![asdf](https://i.imgur.com/cSGcRMh.png)
+
+feedback
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/A1yE6oR7WC8)
+
